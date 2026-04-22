@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CE Cover summary</title>
+	<style>
+		body { font-family: Arial, sans-serif; text-align: center; }
+		img { max-width: 100%; height: auto; }
+		.caption { margin: 20px 0; font-size: 19px; }
+		button { margin-left: 10px; }
+		#dld { border: 2px solid black; padding: 10px; font-size: 21px; }
+		.captionbutton { border: 2px solid black; padding: 10px; font-size: 21px; }
+	</style>
+	<img src="./ce_cover_final.png" alt="Placeholder Image" width="400">
+	<br>
+	<button id="dld" onclick="downloadImage()">Download Image</button>
+	<hr>
+	<div class="caption">
+		<p id="caption1">
+			"Designing the Horizon, Defining the Future."<br>
+			With this motto, our journey begins at the Land of Living, BUET. <br>
+B			ound by one spirit, 195 souls stand devoted to the betterment of our nation.
+
+		</p>
+		<button class="captionbutton" onclick="copyToClipboard('caption1')">Copy Caption 1</button>
+	</div>
+	<div class="caption">
+		<p id="caption2">
+			"From the foundations laid in the past to the innovations of today—we move forward to elevate civil engineering even further."
+		</p>
+		<button class="captionbutton" onclick="copyToClipboard('caption2')">Copy Caption 2</button>
+	</div>
+	<div class="caption">
+		<p id="caption3">
+			“Designing the horizon, defining the future,<br>
+			195 minds united as Civil ’25 🏗️<br>
+			Building more than structures — building our legacy.”
+
+		</p>
+		<button class="captionbutton" onclick="copyToClipboard('caption3')">Copy Caption 3</button>
+	</div>
+	<div class="caption">
+		<p id="caption4">
+			"Ambitions into structures, dreams into reality,<br>
+			195 minds with one vision,<br>
+			The Civil '25 unity"
+
+		</p>
+		<button class="captionbutton" onclick="copyToClipboard('caption4')">Copy Caption 4</button>
+	</div>
+	<div class="caption">
+		<p id="caption5">
+			“195 minds, one vision — Civil ’25 🏗️<br>
+			Turning dreams into structures, step by step,<br>
+			Building not just roads, but our legacy.”
+
+
+		</p>
+		<button class="captionbutton" onclick="copyToClipboard('caption5')">Copy Caption 5</button>
+	</div>
+	<hr>
+	<h2>
+		You may add your own version of caption. If it is interesting, post it in the group and we will add it to the list.
+	</h2>
+	<script>
+		function copyToClipboard(elementId) {
+			const text = document.getElementById(elementId).innerText;
+			navigator.clipboard.writeText(text).then(() => {
+				alert('Caption copied to clipboard!');
+			}).catch(err => {
+				console.error('Failed to copy: ', err);
+			});
+		}
+		function downloadImage() {
+			const link = document.createElement('a');
+			link.href = document.querySelector('img').src;
+			link.download = 'ce_cover_final.png';
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		}
+	</script>
+</body>
+</html>
